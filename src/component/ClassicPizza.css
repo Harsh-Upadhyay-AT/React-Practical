@@ -1,0 +1,16 @@
+/* .classic {
+    display: flex;
+    height: 150px;
+    margin-top: 100px;
+    margin-left: 318px;
+} */
+
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+.classic {
+    text-align: center;
+}
