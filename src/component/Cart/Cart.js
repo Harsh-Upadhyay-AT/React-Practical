@@ -22,8 +22,9 @@ const Cart = (props) => {
       dispatch(decrementOrderItem(newQty, price));
     }
   }
-
+const Totalprice = (subTotal * tax/100)
   return (
+    
     <div className="cart">
       <div className="title">Products</div>
       {order?.length > 0 ? order?.map((product, index) => {
@@ -41,8 +42,8 @@ const Cart = (props) => {
       <div>
         <div className="total-price">SubTotal ${subTotal}</div>
       </div>
-        {/* <div className="tax">Tax-{subTotal * tax/100}</div> */}
-        <div className="Total price">Total price {subTotal + tax}</div>
+        <div className="tax">Tax-{Totalprice}</div>
+        <div className="Total price">Total price {(subTotal + Totalprice )}</div>
         
     </div>
   );

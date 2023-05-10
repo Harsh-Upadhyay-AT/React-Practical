@@ -2,7 +2,7 @@ import * as actions from './action-type';
 
 const intialState = {
   order: [],
-  tax: 0,
+  tax: 5,
   subTotal: 0,
   total: 0,
   classicPizza: 0,
