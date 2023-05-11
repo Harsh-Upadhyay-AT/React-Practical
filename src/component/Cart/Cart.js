@@ -15,7 +15,6 @@ const Cart = (props) => {
     newQty[catogary] = newQty[catogary] + 1;
     dispatch(incrementOrderItem(newQty, price));
   };
-
   const decreamentOrderQty = (catogary, price) => {
     const newQty = { ...qty };
     if (newQty[catogary] > 1) {
@@ -27,7 +26,6 @@ const Cart = (props) => {
     }
   };
   const Totalprice = (subTotal * tax) / 100;
-
   return (
     <div className="cart">
       <div className="title">Products Details</div>
@@ -67,6 +65,7 @@ const CartItem = ({
   onIncrement,
   onDecrement,
   image,
+
 }) => {
   if (quantity === 0) {
     return null;
