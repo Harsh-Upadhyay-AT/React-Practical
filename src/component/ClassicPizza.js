@@ -19,7 +19,7 @@ const ClassicPizza = ({
         <>
           <img src={meal.img} onClick={() => imageClickHandler(meal.id)} />
           <div>{meal.name}</div>
-          <div>{meal.price}</div>
+          <div>Price {meal.price}</div>
         </>
       ))}
       </div>

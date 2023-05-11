@@ -3,7 +3,7 @@ import "./Cart.css";
 import { decrementOrderItem, incrementOrderItem } from "../../Redux/action/OrderSummaryAction";
 
 const Cart = (props) => {
-  const { order, qty, subTotal, tax } = useSelector((state) => state.OrderState)
+  const { order, qty, subTotal, tax,img } = useSelector((state) => state.OrderState)
   const dispatch = useDispatch()
   const incrementOrderQty = (catogary, price) => {
     const newQty = { ...qty };
@@ -23,10 +23,12 @@ const Cart = (props) => {
     }
   }
 const Totalprice = (subTotal * tax/100)
+
   return (
     
     <div className="cart">
-      <div className="title">Products</div>
+      <div className="title">Products Details</div>
+      
       {order?.length > 0 ? order?.map((product, index) => {
         return <CartItem
           key={`${index}`}
@@ -36,9 +38,11 @@ const Totalprice = (subTotal * tax/100)
           onDecrement={decreamentOrderQty}
           price={product.price}
           id={product.id}
+          image={product.img}
           quantity={qty[product.type]}
         />
-      }) : "No products"}
+      }) : "No products" }
+  
       <div>
         <div className="total-price">SubTotal ${subTotal}</div>
       </div>
@@ -56,6 +60,7 @@ const CartItem = ({
   category,
   onIncrement,
   onDecrement,
+  image,
  
 }) => {
   if (quantity === 0) {
@@ -66,6 +71,7 @@ const CartItem = ({
       <div className="description">
         <span>{title}</span>
       </div>
+      <img src={image} alt="Product image" height="50"/>
       <div className="quantity">
         <button
           className="minus-btn"
