@@ -11,7 +11,7 @@
   margin: 20px 0px;
 }
 .section div {
-display: block;
+  display: block;
 }
 
 @media (prefers-reduced-motion: no-preference) {
