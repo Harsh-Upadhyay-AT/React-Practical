@@ -41,6 +41,7 @@ const Totalprice = (subTotal * tax/100)
           image={product.img}
           quantity={qty[product.type]}
         />
+        
       }) : "No products" }
   
       <div>
