@@ -27,6 +27,8 @@ const intialState = {
   }
 }
 
+
+
 const orderSummary = (state = intialState, action) => {
   switch (action.type) {
     case actions.ADD_ORDER:
