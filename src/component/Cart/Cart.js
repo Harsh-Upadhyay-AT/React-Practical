@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux"; 
 import "./Cart.css";
 import {
   decrementOrderItem,
@@ -6,7 +6,7 @@ import {
 } from "../../Redux/action/OrderSummaryAction";
 
 const Cart = (props) => {
-  const { order, qty, subTotal, tax, img } = useSelector(
+  const { order, qty, subTotal, tax } = useSelector(
     (state) => state.OrderState
   );
   const dispatch = useDispatch();
@@ -15,6 +15,7 @@ const Cart = (props) => {
     newQty[catogary] = newQty[catogary] + 1;
     dispatch(incrementOrderItem(newQty, price));
   };
+
   const decreamentOrderQty = (catogary, price) => {
     const newQty = { ...qty };
     if (newQty[catogary] > 1) {
@@ -25,11 +26,12 @@ const Cart = (props) => {
       dispatch(decrementOrderItem(newQty, price));
     }
   };
+
+
   const Totalprice = (subTotal * tax) / 100;
   return (
     <div className="cart">
       <div className="title">Products Details</div>
-
       {order?.length > 0
         ? order?.map((product, index) => {
             return (
@@ -47,12 +49,12 @@ const Cart = (props) => {
             );
           })
         : "No products"}
-
       <div>
         <div className="total-price">SubTotal ${subTotal}</div>
       </div>
       <div className="tax">Tax-{Totalprice}</div>
       <div className="Total price">Total price {subTotal + Totalprice}</div>
+      
     </div>
   );
 };
@@ -66,10 +68,12 @@ const CartItem = ({
   onDecrement,
   image,
 
+  
 }) => {
   if (quantity === 0) {
     return null;
   }
+
   return (
     <div className="item">
       <div className="description">
@@ -96,6 +100,7 @@ const CartItem = ({
         </button>
       </div>
       <div className="total-price">${price * quantity}</div>
+
     </div>
   );
 };

@@ -9,6 +9,7 @@ body {
   margin: 0;
   background-color: #b3e995;
   font-family: 'Roboto', sans-serif;
+  height: 600px;
 }
 
 .cart {
@@ -143,4 +144,5 @@ input:focus {
   .buttons {
     margin-right: 20px;
   }
+  
 }

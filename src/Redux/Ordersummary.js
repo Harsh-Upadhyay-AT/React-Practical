@@ -68,6 +68,7 @@ const orderSummary = (state = intialState, action) => {
         subTotal: state.subTotal - action.price,
       };
 
+
     default:
       return state;
   }

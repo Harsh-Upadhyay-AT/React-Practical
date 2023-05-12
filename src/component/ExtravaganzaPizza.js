@@ -13,11 +13,11 @@ const ExtravaganzaPizza = ({ onGetId }) => {
       <label>ExtravaganzaPizza</label>
       <div className="section">
         {extravaganzapizza.map((meal) => (
-          <>
+          <div className="section-one">
             <img src={meal.img} onClick={() => imageClickHandler(meal.id)} />
             <div>{meal.name}</div>
             <div>Price {meal.price}</div>
-          </>
+          </div>
         ))}
       </div>
     </section>
