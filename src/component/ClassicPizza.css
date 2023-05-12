@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+.classic {
+  text-align: center;
+}
+.section-one{
+  display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 300px;
+}
+.section-one img {
+  height: 100%;
+}
+.section{
+  display: flex;
+  margin: 20px 0px;
+  justify-content: space-evenly;
+  height: 400px;
+}
